@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+## ¿Qué es React?
+React es una biblioteca basada en componentes que permite a los desarrolladores crear interfaces de usuario reutilizables y mantenibles. En lugar de trabajar directamente con el DOM (Document Object Model), React introduce un concepto llamado "Virtual DOM", una representación ligera del DOM real que React utiliza para optimizar las actualizaciones de la interfaz de usuario.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Principales Características
+1. **Componentes**: React se basa en componentes, bloques de construcción independientes y reutilizables que describen una parte de la interfaz de usuario. Los componentes pueden ser clases o funciones, y pueden contener otros componentes, creando jerarquías complejas.
+2. **JSX**: React introduce JSX (JavaScript XML), una extensión de sintaxis que permite escribir HTML dentro de JavaScript. Esto facilita la creación de componentes visuales al combinar la lógica y la presentación en un solo lugar.
+3. **Virtual DOM**: React mantiene un Virtual DOM, que es una copia del DOM real. Cada vez que el estado de un componente cambia, React actualiza el Virtual DOM y calcula la diferencia (diffing) con el DOM real. Luego, realiza las actualizaciones necesarias de manera eficiente, mejorando el rendimiento.
+4. **Unidirectional Data Flow**: React promueve un flujo de datos unidireccional. Esto significa que los datos fluyen en una sola dirección, desde los componentes padres a los componentes hijos, lo que facilita el seguimiento del estado de la aplicación y la depuración.
+5. **Estado y Props**: Los componentes de React pueden gestionar datos a través del estado y las propiedades (props). El estado es gestionado internamente por el componente, mientras que las props se pasan desde los componentes padres a los hijos.
 
-## Available Scripts
+## Ventajas de Usar React.js
+1. **Reutilización de Componentes**: Los componentes de React son altamente reutilizables, lo que permite desarrollar aplicaciones más rápido y con menos código duplicado.
+2. **Eficiencia en las Actualizaciones del DOM**: El uso del Virtual DOM y el proceso de diffing hacen que las actualizaciones de la interfaz de usuario sean muy eficientes, mejorando el rendimiento de la aplicación.
+3. **Ecosistema y Comunidad**: React cuenta con un vasto ecosistema de bibliotecas y herramientas, así como una comunidad activa que contribuye con mejoras y soporte continuo.
+4. **Facilidad de Integración**: React puede integrarse fácilmente con otras bibliotecas o frameworks y puede ser utilizado tanto en el frontend como en el backend (con Node.js).
 
-In the project directory, you can run:
+## Primer Ejemplo
+Un ejemplo básico de un componente de React utilizando JSX:
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-### `npm start`
+function HelloWorld() {
+  return <h1>Hello, World!</h1>;
+}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+```
+En este ejemplo, `HelloWorld` es un componente funcional que retorna un encabezado `h1` con el texto "Hello, World!". `ReactDOM.render` se utiliza para renderizar este componente en un elemento del DOM con el id `root`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Funcionamiento de React.js
+Para entender cómo funciona React.js en profundidad, es importante explorar varios conceptos clave y su interacción. Estos incluyen el Virtual DOM, el ciclo de vida de los componentes, la gestión del estado, y el flujo de datos unidireccional.
 
-### `npm test`
+### Virtual DOM
+El Virtual DOM es una abstracción del DOM real que React utiliza para optimizar las actualizaciones de la interfaz de usuario. Aquí está cómo funciona:
+1. **Renderizado Inicial**: Cuando se renderiza un componente por primera vez, React crea una representación del DOM en memoria llamada Virtual DOM.
+2. **Cambios de Estado**: Cuando cambia el estado o las propiedades (props) de un componente, React actualiza el Virtual DOM en lugar de interactuar directamente con el DOM real.
+3. **Diferencias (Diffing)**: React compara el nuevo Virtual DOM con una copia del anterior para determinar qué partes del DOM real necesitan ser actualizadas.
+4. **Reconciliación**: React aplica sólo las actualizaciones necesarias al DOM real, minimizando el número de operaciones en el DOM y mejorando el rendimiento.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Ciclo de Vida de los Componentes
+Los componentes de React tienen un ciclo de vida que se divide en tres fases principales: montaje, actualización y desmontaje. Cada fase tiene métodos específicos que pueden ser sobrescritos para ejecutar código en momentos particulares del ciclo de vida.
 
-### `npm run build`
+1. **Montaje**: Ocurre cuando un componente se crea y se inserta en el DOM.
+    - `constructor()`: Se llama antes de que el componente se monte.
+    - `componentDidMount()`: Se llama inmediatamente después de que el componente se ha montado en el DOM.
+2. **Actualización**: Ocurre cuando el estado o las props del componente cambian.
+    - `shouldComponentUpdate()`: Permite controlar si el componente debe actualizarse o no.
+    - `componentDidUpdate()`: Se llama inmediatamente después de que el componente se ha actualizado.
+3. **Desmontaje**: Ocurre cuando un componente se elimina del DOM.
+    - `componentWillUnmount()`: Se llama justo antes de que el componente se desmonte y se destruya.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+###  Gestión del Estado y Props
+1. **Estado (State)**: El estado es un objeto que se gestiona internamente dentro de un componente. El estado se inicializa en el constructor y se puede actualizar usando `setState()`.
+2. **Props (Propiedades)**: Las props son datos que se pasan de un componente padre a un componente hijo. Las props son inmutables y no pueden ser modificadas por el componente que las recibe.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Flujo de Datos Unidireccional
+React implementa un flujo de datos unidireccional, lo que significa que los datos siempre fluyen desde el componente padre al componente hijo. Esto hace que el seguimiento del estado y la lógica de la aplicación sea más sencillo y predecible.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Parent to Child**: Los datos se pasan desde el componente padre a través de las props. Los componentes hijos no pueden modificar sus props, lo que asegura que el flujo de datos sea en una sola dirección.
+2. **Lifting State Up**: Cuando varios componentes necesitan compartir el mismo estado, es común elevar el estado al componente ancestro común más cercano. Este componente gestiona el estado y lo distribuye a sus hijos a través de props.
 
-### `npm run eject`
+### Hooks
+Introducidos en React 16.8, los Hooks permiten usar estado y otros features de React en componentes funcionales sin necesidad de escribir clases. Algunos de los hooks más comunes son:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **useState**: Permite añadir estado local a un componente funcional.
+2. **useEffect**: Permite realizar efectos secundarios en componentes funcionales, como suscribirse a servicios externos, modificar el DOM, etc.
+3. **useContext**: Permite consumir un contexto en un componente funcional.
