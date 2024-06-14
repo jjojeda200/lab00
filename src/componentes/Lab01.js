@@ -29,4 +29,8 @@ function Lab01() {
   );
 }
 
+export function Lab02() {
+  
+}
+
 export default Lab01;
