@@ -3,7 +3,7 @@
     display: flex;  /* Usar flexbox para el layout */
     justify-content: center;  /* Centrar elementos horizontalmente */
     align-items: center;  /* Centrar elementos verticalmente */
-    height: 100vh;  /* Altura de la ventana del navegador */
+    height: 600px;  /* Altura de la ventana del navegador */
     background-color: #f0f0f0;  /* Color de fondo */
   }
   
