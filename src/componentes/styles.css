@@ -1,0 +1,61 @@
+/* Define una clase con múltiples propiedades CSS */
+.container {
+    display: flex;  /* Usar flexbox para el layout */
+    justify-content: center;  /* Centrar elementos horizontalmente */
+    align-items: center;  /* Centrar elementos verticalmente */
+    height: 100vh;  /* Altura de la ventana del navegador */
+    background-color: #f0f0f0;  /* Color de fondo */
+  }
+  
+  /* Estilos para un componente de tarjeta */
+  .card {
+    background: white;  /* Fondo blanco */
+    border-radius: 10px;  /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra ligera */
+    overflow: hidden;  /* Ocultar el contenido desbordante */
+    width: 300px;  /* Ancho fijo */
+    max-width: 100%;  /* No exceder el 100% del contenedor */
+  }
+  
+  /* Encabezado de la tarjeta */
+  .card-header {
+    background-color: #6200ea;  /* Fondo púrpura */
+    color: white;  /* Texto blanco */
+    padding: 20px;  /* Espaciado interno */
+    font-size: 1.25rem;  /* Tamaño de fuente */
+  }
+  
+  /* Contenido de la tarjeta */
+  .card-content {
+    padding: 20px;  /* Espaciado interno */
+  }
+  
+  /* Estilos de los botones */
+  .button {
+    display: inline-block;  /* Mostrar como bloque en línea */
+    background-color: #6200ea;  /* Fondo púrpura */
+    color: white;  /* Texto blanco */
+    padding: 10px 20px;  /* Espaciado interno */
+    border: none;  /* Sin borde */
+    border-radius: 5px;  /* Bordes redondeados */
+    text-decoration: none;  /* Sin subrayado */
+    font-size: 1rem;  /* Tamaño de fuente */
+    cursor: pointer;  /* Cambiar el cursor al pasar */
+    transition: background-color 0.3s;  /* Transición suave del color de fondo */
+  }
+  
+  /* Cambiar color de fondo al pasar el ratón */
+  .button:hover {
+    background-color: #16e640;  /* Fondo más oscuro */
+  }
+  
+  /* Media query para dispositivos móviles */
+  @media (max-width: 600px) {
+    .card {
+      width: 90%;  /* Ajustar el ancho al 90% */
+    }
+  
+    .card-header {
+      font-size: 1rem;  /* Reducir tamaño de fuente */
+    }
+  }

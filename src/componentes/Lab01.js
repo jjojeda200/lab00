@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import './styles.css';  // Importar el archivo CSS
 
-function Lab01() {
+export function Lab01() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -30,7 +31,24 @@ function Lab01() {
 }
 
 export function Lab02() {
-  
+  return (
+    <div className="container">
+      {/* Contenedor principal */}
+      <div className="card">
+        {/* Componente de tarjeta */}
+        <div className="card-header">
+          {/* Encabezado de la tarjeta */}
+          Cabecera de tarjeta
+        </div>
+        <div className="card-content">
+          {/* Contenido de la tarjeta */}
+          <p>Este es un contenido dentro de la tarjeta. Está centrado y tiene estilo CSS.</p>
+          <button className="button">Pulsa</button>
+          {/* Botón con estilos */}
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Lab01;
+// export default Lab02;
