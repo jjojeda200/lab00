@@ -1,0 +1,32 @@
+.galeria {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-Wrap: wrap;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  
+  .galeria img {
+    width: 300px;
+    height: 250px;
+    transition: transform 0.3s ease; /* Añade una transición suave */
+  }
+  
+  .galeria img:hover {
+    transform: scale(1.2); /* Ajusta el factor de escala según tus necesidades */
+  }
+  
+  .galeria p {
+    text-align: center;
+  }
+  
+  .galeria-title {
+    text-align: center;
+    color: brown;
+  }
+  
+  .galeria-inputs {
+    text-align: center;
+    margin-bottom: 20px;
+  }

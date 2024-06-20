@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./pi05.css";
 
 function GaleriaDeImagenes() {
   const [imagenes, setImagenes] = useState([
@@ -22,20 +23,31 @@ function GaleriaDeImagenes() {
 
   return (
     <div>
-      <h1 style={{ textAlign: 'center' }}>Galería de imágenes</h1>
+      <h1 className="galeria-title">Galería de imágenes</h1>
       <div style={{ textAlign: 'center', marginBottom: '20px' }}>
         <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="URL de la imagen" />
         <input type="text" value={caption} onChange={(e) => setCaption(e.target.value)} placeholder="Pie de foto" />
         <button onClick={agregarImagen}>Agregar Imagen</button>
       </div>
-      <div className="galeria" style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: "wrap", margin: '0 auto', maxWidth: '80%' }}>
+
+      {/* <div className="galeria" style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: "wrap", margin: '0 auto', maxWidth: '80%' }}>
         {imagenes.map((img, index) => (
           <div key={index}>
             <img src={img.src} alt={img.alt} width="300" height="250" />
             <p>{img.caption}</p>
           </div>
         ))}
+      </div> */}
+
+      <div className="galeria">
+        {imagenes.map((img, index) => (
+          <div key={index}>
+            <img src={img.src} alt={img.alt} />
+            <p>{img.caption}</p>
+          </div>
+        ))}
       </div>
+
     </div>
   );
 }
