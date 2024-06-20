@@ -28,7 +28,7 @@ function GaleriaDeImagenes() {
         <input type="text" value={caption} onChange={(e) => setCaption(e.target.value)} placeholder="Pie de foto" />
         <button onClick={agregarImagen}>Agregar Imagen</button>
       </div>
-      <div className="galeria" style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: "wrap", margin: '2 auto', maxWidth: '80%' }}>
+      <div className="galeria" style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: "wrap", margin: '0 auto', maxWidth: '80%' }}>
         {imagenes.map((img, index) => (
           <div key={index}>
             <img src={img.src} alt={img.alt} width="300" height="250" />

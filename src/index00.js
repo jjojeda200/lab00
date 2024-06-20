@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import Lab00 from "./componentes/Lab00";
 // import {Lab01, Lab02 } from "./componentes/Lab01";
 import GaleriaDeImagenes from "./Pildoras/pi05"
