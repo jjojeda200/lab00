@@ -1,21 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import GaleriaDeImagenes from "./pi05"
-import MultiStateComponent from "./pi08"
+//import GaleriaDeImagenes from "./pi05"
+//import MultiStateComponent from "./pi08"
+import videoComponent from "./pi09"
 
-const galeria = ReactDOM.createRoot(document.getElementById("root"));
-const mulicomp = ReactDOM.createRoot(document.getElementById("multicomponentes"));
-galeria.render(<GaleriaDeImagenes />);
-mulicomp.render(<MultiStateComponent />);
+const video = ReactDOM.createRoot(document.getElementById("root"));
+video.render(<videoComponent />);
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <GaleriaDeImagenes />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+// const micomp = ReactDOM.createRoot(document.getElementById("root"));
+// const galeria = ReactDOM.createRoot(document.getElementById("galeria"));
+// const mulicomp = ReactDOM.createRoot(document.getElementById("multicomp"));
+// const video = ReactDOM.createRoot(document.getElementById("video"));
 
-function ref() {
 
-}
-setInterval(ref, 1000);
+// micomp.render(<videoComponent />);
+// galeria.render(<GaleriaDeImagenes />);
+// mulicomp.render(<MultiStateComponent />);
+// video.render(<videoComponent />);

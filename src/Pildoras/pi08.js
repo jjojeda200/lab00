@@ -24,4 +24,5 @@ function MultiStateComponent() {
     </div>
   );
 }
+
 export default MultiStateComponent;

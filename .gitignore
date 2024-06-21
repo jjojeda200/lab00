@@ -25,3 +25,5 @@ yarn-error.log*
 
 public/Galeria
 public/img/*.jpg
+
+src/assets
