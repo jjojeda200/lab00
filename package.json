@@ -16,8 +16,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "start:app1": "REACT_APP_ENTRY=src/Pildoras/App.js react-app-rewired start",
-    "start:app2": "REACT_APP_ENTRY=src/index.js react-app-rewired start"
+    "start:pi": "REACT_APP_ENTRY=src/Pildoras/App.js react-app-rewired start",
+    "start:fh": "REACT_APP_ENTRY=src/FernandoH/index.js react-app-rewired start"
   },
   "eslintConfig": {
     "extends": [
