@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import "./pi05.css";
 
 function MultiStateComponent() {
   const [name, setName] = useState("");
   const [age, setAge] = useState(null);
 
   return (
-    <div className="galeria-title">
+    <div>
       <input
         type="text"
         value={name}

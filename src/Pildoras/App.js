@@ -1,15 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import GaleriaDeImagenes from "./pi05"
-import MultiStateComponent from "./pi08"
-import { VideoComp } from "./pi09";
+import { Paridad, EntradaDatos } from "./pi10";
 
+const entrada = ReactDOM.createRoot(document.getElementById("entradas"));
+const paridad = ReactDOM.createRoot(document.getElementById("root"));
 
-const galeria = ReactDOM.createRoot(document.getElementById("galeria"));
-const multicomp = ReactDOM.createRoot(document.getElementById("multicomp"));
-const video = ReactDOM.createRoot(document.getElementById("video"));
-
-
-galeria.render(<GaleriaDeImagenes />);
-multicomp.render(<MultiStateComponent />);
-video.render(<VideoComp />);
+entrada.render(<EntradaDatos color="green" size="38px" justifyContent="center" />);
+paridad.render(<Paridad color="green" size="38px" justifyContent="center" />);

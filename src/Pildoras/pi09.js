@@ -24,19 +24,4 @@ export function VideoComp() {
   );
 }
 
-/* 
-export function MiComponente() {
-    const referencia = useRef(null);
-
-    return (
-        <div>
-            <input ref={referencia} type="text" />
-            <button onClick={() => referencia.current.focus()}>
-                Enfocar Input
-            </button>
-        </div>
-    );
-}
-*/
-
-// export default videoComponent;
+// export default VideoComp;
