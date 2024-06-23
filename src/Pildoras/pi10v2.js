@@ -33,6 +33,12 @@ function Paridad({ moneda, cantidad, propiedad }) {
       style={{
         backgroundImage: "url('img/paisaje0.jpg')",
         backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover', // Ajusta la imagen para que cubra completamente el contenedor
+        backgroundPosition: 'center', // Centra la imagen
+        backgroundAttachment: 'fixed', // Hace que la imagen de fondo sea fija al desplazarse
+        width: '100vw', // Ocupa el ancho completo del viewport
+        height: '100vh', // Ocupa la altura completa del viewport
+        overflow: 'hidden', // Evita el desbordamiento del contenido
       }}
     >
       <div style={colorStyle}>{paridad}</div>
