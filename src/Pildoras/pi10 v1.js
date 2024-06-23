@@ -5,6 +5,7 @@ export function Paridad(propiedad) {
 
   useEffect(() => {
     const fetchParidad = async () => {
+
       const host = "api.frankfurter.app";
       try {
         const response = await fetch(`https://${host}/latest?amount=1&from=EUR&to=USD`);
