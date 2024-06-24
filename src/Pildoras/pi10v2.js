@@ -16,7 +16,7 @@ function Paridad({ moneda, cantidad, propiedad }) {
         console.error("Error obteniendo paridad:", error);
       }
     }
-    fetchParidad();
+    setTimeout(() => {fetchParidad();}, 2000); 
   }, [moneda, cantidad]);
 
   const colorStyle = {
@@ -72,7 +72,7 @@ export function Conversor(propiedadConv) {
     color: propiedadConv.color,
     size: propiedadConv.size,
     justifyContent: propiedadConv.justifyContent,
-    fontWeight: "bold", // Asegúrate de que esta propiedad esté presente
+    fontWeight: "bold"
     // color: "green",
     // size: "40px",
     // justifyContent: "center"
