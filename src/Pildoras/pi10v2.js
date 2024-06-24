@@ -23,6 +23,7 @@ function Paridad({ moneda, cantidad, propiedad }) {
     color: propiedad.color,
     fontSize: propiedad.size,
     justifyContent: propiedad.justifyContent,
+    fontWeight: propiedad.fontWeight,
     display: "flex",
     alignItems: "center",
     height: "40vh",
@@ -63,14 +64,18 @@ function EntradaDatos({ setMoneda, setCantidad }) {
   );
 }
 
-export function Conversor() {
+export function Conversor(propiedadConv) {
   const [moneda, setMoneda] = useState("");
   const [cantidad, setCantidad] = useState(null);
   
   const propiedad = {
-    color: "black",
-    size: "20px",
-    justifyContent: "center"
+    color: propiedadConv.color,
+    size: propiedadConv.size,
+    justifyContent: propiedadConv.justifyContent,
+    fontWeight: "bold", // Asegúrate de que esta propiedad esté presente
+    // color: "green",
+    // size: "40px",
+    // justifyContent: "center"
   };
 
   return (
