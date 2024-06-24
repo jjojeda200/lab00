@@ -16,7 +16,9 @@ function Paridad({ moneda, cantidad, propiedad }) {
         console.error("Error obteniendo paridad:", error);
       }
     }
-    setTimeout(() => {fetchParidad();}, 2000); 
+    
+    fetchParidad();
+    //setTimeout(() => {fetchParidad();}, 2000); 
   }, [moneda, cantidad]);
 
   const colorStyle = {
