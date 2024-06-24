@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./pi05.css";
 
-function GaleriaDeImagenes() {
+export function GaleriaDeImagenes() {
   const [imagenes, setImagenes] = useState([
     { src: 'img/paisaje0.jpg', alt: 'Imagen 1', caption: 'Pie de foto Imagen 1' },
     { src: 'img/paisaje1.jpg', alt: 'Imagen 2', caption: 'Pie de foto Imagen 2' },
@@ -52,4 +52,4 @@ function GaleriaDeImagenes() {
   );
 }
 
-export default GaleriaDeImagenes;
+//export default GaleriaDeImagenes;
