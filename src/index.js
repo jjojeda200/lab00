@@ -3,8 +3,7 @@ import ReactDOM from "react-dom/client";
 //import {Lab00, Contador} from "./componentes/Lab00";
 //import {Lab01, Lab02 } from "./componentes/Lab01";
 //import { Formulario, FormularioConRef } from "./componentes/Lab02";
-import { FormularioValidado } from "./componentes/Lab03";
-
+import { FormularioValidado, FormularioDinamico } from "./componentes/Lab03";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -14,7 +13,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 //const lab00 = ReactDOM.createRoot(document.getElementById("Lab00"));
 
 
-root.render(<FormularioValidado />);
+//root.render(<FormularioValidado />);
+root.render(<FormularioDinamico />);
 
 function ref() {
   //lab01.render(<Formulario />);

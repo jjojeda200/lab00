@@ -78,3 +78,73 @@ export function FormularioValidado() {
     </form>
   );
 }
+
+
+export function FormularioDinamico() {
+  // Estado para almacenar un array de objetos que representan cada campo de entrada
+  // Cada objeto tiene un id (identificador único) y un valor (texto introducido)
+  const [inputs, setInputs] = useState([{ id: 1, value: '' }]);
+
+  // Hook useRef para almacenar referencias a cada elemento de entrada
+  // Esto nos permite enfocarlos programáticamente más tarde
+  const inputRefs = useRef([]);
+
+  // Función para manejar cambios en un campo de entrada
+  // Toma el id de la entrada y el objeto de evento como argumentos
+  const handleChange = (id, event) => {
+    // Crea una copia del array inputs para evitar mutaciones
+    const newInputs = inputs.map(input => {
+      // Comprueba si la entrada actual coincide con el id de la modificada
+      if (input.id === id) {
+        // Actualiza la propiedad value de la entrada coincidente con el nuevo valor
+        return { ...input, value: event.target.value };
+      }
+      // Si no es la entrada coincidente, devuelve el objeto original
+      return input;
+    });
+    // Actualiza el estado con el array inputs modificado
+    setInputs(newInputs);
+  };
+
+  // Función para añadir un nuevo campo de entrada al formulario
+  const addInput = () => {
+    // Crea un nuevo objeto de entrada con un id único y un valor vacío
+    const newInput = { id: inputs.length + 1, value: '' };
+    // Actualiza el estado extendiendo los inputs existentes y añadiendo el nuevo
+    setInputs([...inputs, newInput]);
+  };
+
+  // Función para enfocar un campo de entrada específico
+  // Toma el índice de la entrada en el array inputs
+  const handleFocus = (index) => {
+    // Accede al elemento de entrada correspondiente utilizando la referencia en el índice dado
+    inputRefs.current[index].focus();
+  };
+
+  return (
+    <div>
+      {/* Recorre cada objeto de entrada en el estado */}
+      {inputs.map((input, index) => (
+        <div key={input.id}>
+          {/* Renderiza un campo de entrada con el valor y el id actuales */}
+          <input
+            ref={(el) => (inputRefs.current[index] = el)} // Almacena la referencia
+            type="text"
+            value={input.value}
+            onChange={(e) => handleChange(input.id, e)} // Actualiza al cambiar
+          />
+          {/* Botón para enfocar el campo de entrada actual */}
+          <button type="button" onClick={() => handleFocus(index)}>
+            Enfocar (Focus)
+          </button>
+        </div>
+      ))}
+      {/* Botón para añadir un nuevo campo de entrada */}
+      <button type="button" onClick={addInput}>
+        Agregar Input (Add Input)
+      </button>
+    </div>
+  );
+}
+
+export default FormularioDinamico;
