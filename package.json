@@ -18,8 +18,7 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "start:pi": "REACT_APP_ENTRY=src/Pildoras/App.js REACT_APP_HTML=public/pi.html react-app-rewired start",
-    "start:fh": "REACT_APP_ENTRY=src/FernandoH/index.js REACT_APP_HTML=public/fh.html react-app-rewired start",
-    "start:leo": "REACT_APP_ENTRY=src/Leonardo/main.jsx REACT_APP_HTML=public/leo.html react-app-rewired start"
+    "start:fh": "REACT_APP_ENTRY=src/FernandoH/index.js REACT_APP_HTML=public/fh.html react-app-rewired start"
   },
   "eslintConfig": {
     "extends": [
